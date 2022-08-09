@@ -5,6 +5,21 @@
                 "internalType": "address",
                 "name": "_feeToSetter",
                 "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_feeToAllocSetter",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_defaultFeeSetter",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_pairFeeSetter",
+                "type": "address"
             }
         ],
         "stateMutability": "nonpayable",
@@ -39,6 +54,116 @@
             }
         ],
         "name": "PairCreated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "defaultFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetDefaultFee",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "defaultFeeSetter",
+                "type": "address"
+            }
+        ],
+        "name": "SetDefaultFeeSetter",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "feeTo",
+                "type": "address"
+            }
+        ],
+        "name": "SetFeeTo",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "feeToAlloc",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetFeeToAlloc",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "feeToAllocSetter",
+                "type": "address"
+            }
+        ],
+        "name": "SetFeeToAllocSetter",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "feeToSetter",
+                "type": "address"
+            }
+        ],
+        "name": "SetFeeToSetter",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "pair",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "pairFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetPairFee",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "pairFeeSetter",
+                "type": "address"
+            }
+        ],
+        "name": "SetPairFeeSetter",
         "type": "event"
     },
     {
@@ -93,6 +218,15 @@
     },
     {
         "inputs": [],
+        "name": "defaultFeeSetter",
+        "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
         "name": "feeTo",
         "outputs": [
             { "internalType": "address", "name": "", "type": "address" }
@@ -105,6 +239,15 @@
         "name": "feeToAlloc",
         "outputs": [
             { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "feeToAllocSetter",
+        "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -162,6 +305,15 @@
         "type": "function"
     },
     {
+        "inputs": [],
+        "name": "pairFeeSetter",
+        "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "internalType": "uint256",
@@ -170,6 +322,19 @@
             }
         ],
         "name": "setDefaultFee",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_defaultFeeSetter",
+                "type": "address"
+            }
+        ],
+        "name": "setDefaultFeeSetter",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -200,6 +365,19 @@
         "inputs": [
             {
                 "internalType": "address",
+                "name": "_feeToAllocSetter",
+                "type": "address"
+            }
+        ],
+        "name": "setFeeToAllocSetter",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
                 "name": "_feeToSetter",
                 "type": "address"
             }
@@ -215,6 +393,19 @@
             { "internalType": "uint256", "name": "_fee", "type": "uint256" }
         ],
         "name": "setPairFee",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_pairFeeSetter",
+                "type": "address"
+            }
+        ],
+        "name": "setPairFeeSetter",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
